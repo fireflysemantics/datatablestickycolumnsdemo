@@ -1,0 +1,17 @@
+{
+  "name": "@fireflysemantics/material",
+  "version": "1.0.66",
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "http://localhost:4873"
+  },
+  "peerDependencies": {
+    "@angular/material": "*",
+    "@fireflysemantics/cdk": "*",
+    "@ngneat/until-destroy": "*",
+    "@fireflysemantics/slice": "*",
+    "@fireflysemantics/assets": "*",
+    "tslib": "*"
+  },
+  "dependencies": {}
+}

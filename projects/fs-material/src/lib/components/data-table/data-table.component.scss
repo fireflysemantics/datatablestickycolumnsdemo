@@ -1,0 +1,29 @@
+/* https://stackoverflow.com/questions/50824617/angular-material-table-sizing-scroll */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.hide {
+  display:none;
+}
+
+th.mat-header-cell {
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: auto;
+  max-width: 8rem;
+}
+
+td.mat-cell {
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 8rem;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 800px;
+}

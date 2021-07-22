@@ -1,0 +1,39 @@
+<!--
+<table [style.width.px]="tableData.style.tableWidthPX" mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort>
+-->
+<div style="width: 100%; min-width: 400px;" *ngIf="this.tableData.columnTemplates && this.tableData.columnTemplates.length">
+    <div class="table-container">
+        <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="n">
+                <td>no data</td>
+                <!--
+            <ng-container *ngIf="!!noDataMessage">
+                <td mat-footer-cell *matFooterCellDef [attr.colspan]="this.COLUMNS.length || 100">
+                    {{noDataMessage}}
+                </td>
+            </ng-container>-->
+            </ng-container>
+            <ng-container *ngFor="let c of tableData.columnTemplates" matColumnDef="{{c}}" [sticky]="isSticky(c)">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{c.toUpperCase().split('_').join(' ')}}</th>
+                <td mat-cell *matCellDef="let row;">{{row[c.toLowerCase()] ? row[c.toLowerCase()] :
+                    row[c.toUpperCase()]}}
+                </td>
+            </ng-container>
+            <!--
+        <ng-container matColumnDef="progress">
+            <td mat-footer-cell *matFooterCellDef [attr.colspan]="this.COLUMNS.length || 100">
+                <mat-progress-bar [mode]="progressMode || 'buffer'" [color]="progressColor || 'primary'"
+                    value="{{ progress$ | async }}"></mat-progress-bar>
+            </td>
+        </ng-container>-->
+            <tr mat-header-row *matHeaderRowDef="tableData.headers">
+            </tr>
+            <tr mat-row *matRowDef="let row; columns: tableData.headers"></tr>
+            <!--
+        <tr mat-footer-row *matFooterRowDef="['n']"></tr>
+        <tr mat-footer-row *matFooterRowDef="['nodata']"></tr>        -->
+        </table>
+    </div>
+    <mat-paginator [pageSizeOptions]="tableData.pageSizeOptions" [pageSize]="tableData.pageSizeDefault"
+    showFirstLastButtons></mat-paginator>
+</div>
