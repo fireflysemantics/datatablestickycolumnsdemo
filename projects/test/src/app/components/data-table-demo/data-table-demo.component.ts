@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TableData } from '@fireflysemantics/cdk'
 import { BehaviorSubject, Observable, of } from 'rxjs';
+import { TableData } from 'fs-material'
 @Component({
   selector: 'app-data-table-demo',
   templateUrl: './data-table-demo.component.html',
